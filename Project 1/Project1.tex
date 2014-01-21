@@ -183,7 +183,7 @@ We have as follows the radial wave functions generated via the script at the end
 \end{figure}
 \vspace{1mm}
 
-
+\section{Delta Functions}
 
 \section{Resonances}
 
@@ -191,24 +191,16 @@ While we can see resonances in the delta functions, most clearly in the L=2 case
 
 
 \vspace{.1mm}
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=.6\linewidth]{CrossSectionL0}
+\begin{floatrow}
+\subfloat{\includegraphics[width=.3\linewidth]{CrossSectionL0}}
+\quad
+\subfloat{\includegraphics[width=.3\linewidth]{CrossSectionL1}}
+\quad
+\subfloat{\includegraphics[width=.3\linewidth]{CrossSectionL2}}
+\end{floatrow}
 \end{figure}
-\vspace{.1mm}
-\vspace{.1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.6\linewidth]{CrossSectionL1}
-\end{figure}
-\vspace{.1mm}
-
-\vspace{.1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.6\linewidth]{CrossSectionL2}
-\end{figure}
-\vspace{.1mm}
 \section{Appendix: Code for generating graphs}
 \lstinputlisting{chiscript.py}
 
