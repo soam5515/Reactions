@@ -37,7 +37,8 @@
 \renewcommand{\headrulewidth}{0pt} % customise the layout...
 \lhead{}\chead{}\rhead{}
 \lfoot{}\cfoot{\thepage}\rfoot{}
-
+\usepackage{multicol}
+\usepackage{subfig}
 %%% SECTION TITLE APPEARANCE
 \usepackage{sectsty}
 \allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
@@ -46,18 +47,19 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{color}
-
+\usepackage{floatrow}
+\usepackage[section]{placeins}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
-
+\usepackage{afterpage} 
 \lstset{frame=tb,
   language=Python,
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
-  basicstyle={\small\ttfamily},
+  basicstyle={\tiny\ttfamily},
   numbers=none,
   numberstyle=\tiny\color{gray},
   keywordstyle=\color{blue},
@@ -126,113 +128,87 @@ From this we see that for any L value, we would simply match that\\
 \begin{equation}
 \chi(a)=H_L^-+S_LH_L^+\approx \sin(ka-\frac{L\pi}{2}+\delta_L)
 \end{equation}
-
+\newpage
 \section{Plotting Radial Behaviour}
-
 We have as follows the radial wave functions generated via the script at the end of this report:\\
 
-
-\vspace{1mm}
-\begin{figure}[H]
+%\vspace{.1mm}
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=.5\linewidth]{"chiE1L0"}
+\begin{floatrow}
+\subfloat{\includegraphics[width=.4\linewidth]{"chiE1L0"}}
+%\end{figure}
+%\vspace{.1mm}
+\quad
+
+%\vspace{.1mm}
+%\begin{figure}[htbp]
+\centering
+\subfloat{\includegraphics[width=.4\linewidth]{"chiE10L0"}}
+\end{floatrow}
+\end{figure}
+\vspace{1mm}
+
+\vspace{.1mm}
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}
+\subfloat{\includegraphics[width=.4\linewidth]{"chiE1L1"}}
+%\end{figure}
+%\vspace{.1mm}
+\quad
+
+%\vspace{.1mm}
+%\begin{figure}[htbp]
+\centering
+\subfloat{\includegraphics[width=.4\linewidth]{"chiE10L1"}}
+\end{floatrow}
+\end{figure}
+\vspace{1mm}
+
+\vspace{.1mm}
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}
+\subfloat{\includegraphics[width=.4\linewidth]{"chiE1L2"}}
+%\end{figure}
+%\vspace{.1mm}
+\quad
+
+%\vspace{.1mm}
+%\begin{figure}[htbp]
+\centering
+\subfloat{\includegraphics[width=.4\linewidth]{"chiE10L2"}}
+\end{floatrow}
 \end{figure}
 \vspace{1mm}
 
 
-\vspace{1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\linewidth]{"chiE1L1"}
-\end{figure}
-\vspace{1mm}
 
-
-\vspace{1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\linewidth]{"chiE1L2"}
-\end{figure}
-\vspace{1mm}
-
-
-\vspace{1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\linewidth]{"chiE10L0"}
-\end{figure}
-\vspace{1mm}
-
-
-\vspace{1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\linewidth]{"chiE10L1"}
-\end{figure}
-\vspace{1mm}
-
-
-\vspace{1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\linewidth]{"chiE10L2"}
-\end{figure}
-\vspace{1mm}
-
-\newpage
-\section{Delta as Function of Energy}
-We see then that from the same code we have.\\
-
-\vspace{1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\linewidth]{"deltavenL0"}
-\end{figure}
-\vspace{1mm}
-
-
-\vspace{1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\linewidth]{"deltavenL1"}
-\end{figure}
-\vspace{1mm}
-
-
-\vspace{1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\linewidth]{"deltavenL2"}
-\end{figure}
-\vspace{1mm}
-
-\newpage
 \section{Resonances}
 
 While we can see resonances in the delta functions, most clearly in the L=2 case, we can see this even more clearly in the cross sections, once again calculated in the script attached, and which are plotted below.\\
 
 
-\vspace{1mm}
+\vspace{.1mm}
 \begin{figure}[H]
 \centering
-\includegraphics[width=.5\linewidth]{CrossSectionL0}
+\includegraphics[width=.6\linewidth]{CrossSectionL0}
 \end{figure}
-\vspace{1mm}
+\vspace{.1mm}
+\vspace{.1mm}
+\begin{figure}[H]
+\centering
+\includegraphics[width=.6\linewidth]{CrossSectionL1}
+\end{figure}
+\vspace{.1mm}
 
-\vspace{1mm}
+\vspace{.1mm}
 \begin{figure}[H]
 \centering
-\includegraphics[width=.5\linewidth]{CrossSectionL1}
+\includegraphics[width=.6\linewidth]{CrossSectionL2}
 \end{figure}
-\vspace{1mm}
-
-\vspace{1mm}
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\linewidth]{CrossSectionL2}
-\end{figure}
-\vspace{1mm}
-\newpage
+\vspace{.1mm}
 \section{Appendix: Code for generating graphs}
 \lstinputlisting{chiscript.py}
 

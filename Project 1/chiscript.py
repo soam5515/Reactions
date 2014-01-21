@@ -11,7 +11,7 @@ plt.rc('text', usetex=True)
 plt.rc('font', family='serif')
 def findpeakinfo(xs,arr):
     func=np.asarray([a-np.max(arr)/2 for a in (arr)])
-    r0 =  func==0  
+    r0 =  np.abs(func)<=0.1  
     print(r0)
     #return np.max(arr), np.abs(r1-r2)
 
