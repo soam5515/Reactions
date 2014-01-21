@@ -113,7 +113,7 @@ for vars in product(Energies,Ls):
     radwav.SetSMatrix()
     radwav.SetDelta()
     radwav.SetSinDelta()
-    twodplot(radwav.rvalues,radwav.chivalues,"chi vs r at Energy "+str(vars[0])+" and L "+str(vars[1]),"r(fm)", "chi")
+    twodplot(radwav.rvalues,radwav.chivalues,"$\chi$ vs r at Energy "+str(vars[0])+" and L "+str(vars[1]),"r (fm)", r"$\chi$")
     radwaves.append(radwav)
 rs=np.linspace(100,10000,100)
 deltas=[]
@@ -145,7 +145,7 @@ for L in Ls:
         rmats.append(np.abs(radwav.Rmat))
         crosssections.append(radwav.crosssection)
         rmatsfromsmats.append(1/radwav.rvalues[ain]*(HenkelMinus(radwav.GetK()*radwav.rvalues[ain],radwav.L)-radwav.SMat*HenkelPlus(radwav.GetK()*radwav.rvalues[-1],radwav.L))/((HenkelMinusPrime(radwav.GetK()*radwav.rvalues[-1],radwav.L,radwav.GetK())-radwav.SMat*HenkelPlusPrime(radwav.GetK()*radwav.rvalues[-1],radwav.L,radwav.GetK()))))
-    twodplot(EnergiesDelta,makeanglecontinuous(deltasen)," delta vs Energy for  L "+str(L),"E(MeV)", "delta")
-    twodplot(EnergiesDelta,crosssections," Cross section vs Energy for  L "+str(L),"E (MeV)", r" Cross Section (barns)")
+    twodplot(EnergiesDelta,makeanglecontinuous(deltasen),r" $\delta$ vs Energy for  L "+str(L),"E(MeV)", r"$\delta$")
+    twodplot(EnergiesDelta,crosssections," Cross section vs Energy for  L "+str(L),"E (MeV)", " Cross Section (barns)")
 plt.show()
 

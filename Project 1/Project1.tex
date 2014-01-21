@@ -112,7 +112,7 @@ Where we can then plug in for V:\\
 We can represent this as:\\
 
 \begin{equation}
-\boxed{\chi''(r)=\frac{2\mu}{\hbar^2}(\frac{V_0}{1+e^{\frac{r-R_{ws}}{a_{ws}}}}-E)\chi-\frac{L(L+1)}{r^2}\chi}
+\boxed{\chi''(r)=\frac{2\mu}{\hbar^2}(\frac{V_0}{1+e^{\frac{r-R_{ws}}{a_{ws}}}}-E)\chi+\frac{L(L+1)}{r^2}\chi}
 \end{equation}
 \subsection{Scattering Boundary Conditions}
 Now, if we plug in numbers for all of the constants, and make some assumptions for E and L, we are able to solve this numerically, if in addition we provide some sort of boundary conditions. We know that in order to prevent the terms from blowing up, this means that we need $\chi_L(0)=0$, which is one such condition. We also need to have, for an elastic collision, the condition that at infinity we should expect the wavefunction to return to the form $e^{ikr}$. This can be written as at some chosen distance $a$ we set the values of the equation to be 0 everywhere except at $\theta=0$, where we would want $e^{ika+\delta}$, noting tangentially that k is determined by the mass and energy of the neutron. This is explicitly:\\
@@ -133,7 +133,7 @@ We have as follows the radial wave functions generated via the script at the end
 
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{"chiE1L0"}
 \end{figure}
@@ -141,7 +141,7 @@ We have as follows the radial wave functions generated via the script at the end
 
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{"chiE1L1"}
 \end{figure}
@@ -149,7 +149,7 @@ We have as follows the radial wave functions generated via the script at the end
 
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{"chiE1L2"}
 \end{figure}
@@ -157,7 +157,7 @@ We have as follows the radial wave functions generated via the script at the end
 
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{"chiE10L0"}
 \end{figure}
@@ -165,7 +165,7 @@ We have as follows the radial wave functions generated via the script at the end
 
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{"chiE10L1"}
 \end{figure}
@@ -173,7 +173,7 @@ We have as follows the radial wave functions generated via the script at the end
 
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{"chiE10L2"}
 \end{figure}
@@ -184,7 +184,7 @@ We have as follows the radial wave functions generated via the script at the end
 We see then that from the same code we have.\\
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{"deltavenL0"}
 \end{figure}
@@ -192,7 +192,7 @@ We see then that from the same code we have.\\
 
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{"deltavenL1"}
 \end{figure}
@@ -200,7 +200,7 @@ We see then that from the same code we have.\\
 
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{"deltavenL2"}
 \end{figure}
@@ -213,27 +213,27 @@ While we can see resonances in the delta functions, most clearly in the L=2 case
 
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{CrossSectionL0}
 \end{figure}
 \vspace{1mm}
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{CrossSectionL1}
 \end{figure}
 \vspace{1mm}
 
 \vspace{1mm}
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.5\linewidth]{CrossSectionL2}
 \end{figure}
 \vspace{1mm}
-
-
-
+\newpage
+\section{Appendix: Code for generating graphs}
+\lstinputlisting{chiscript.py}
 
 \end{document}
