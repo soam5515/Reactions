@@ -5,9 +5,15 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy import special
 from itertools import product
 from scipy.optimize import fsolve, curve_fit
+from scipy.interpolate import UnivariateSpline
 
 plt.rc('text', usetex=True)
 plt.rc('font', family='serif')
+def findpeakinfo(xs,arr):
+    spline = UnivariateSpline(xs, arr-np.max(arr)/2, s=0)
+    r1, r2 = spline.roots() # find the roots
+    return np.max(arr), np.abs(r1-r2)
+
 def makeanglecontinuous(angles):
     "Renormalize Angles to remove discontinuities by adding n*pi"
     count=0#how many times n pi we need to add/subtract
@@ -116,10 +122,6 @@ for vars in product(Energies,Ls):
     twodplot(radwav.rvalues,radwav.chivalues,"$\chi$ vs r at Energy "+str(vars[0])+" and L "+str(vars[1]),"r (fm)", r"$\chi$")
     radwaves.append(radwav)
 rs=np.linspace(100,10000,100)
-deltas=[]
-sindeltas=[]
-Ss=[]
-CrossSections=[]
 EnergiesDelta=np.linspace(.1,4,1000)
 for L in Ls:
     deltasen=[]
@@ -147,5 +149,7 @@ for L in Ls:
         rmatsfromsmats.append(1/radwav.rvalues[ain]*(HenkelMinus(radwav.GetK()*radwav.rvalues[ain],radwav.L)-radwav.SMat*HenkelPlus(radwav.GetK()*radwav.rvalues[-1],radwav.L))/((HenkelMinusPrime(radwav.GetK()*radwav.rvalues[-1],radwav.L,radwav.GetK())-radwav.SMat*HenkelPlusPrime(radwav.GetK()*radwav.rvalues[-1],radwav.L,radwav.GetK()))))
     twodplot(EnergiesDelta,makeanglecontinuous(deltasen),r" $\delta$ vs Energy for  L "+str(L),"E(MeV)", r"$\delta$")
     twodplot(EnergiesDelta,crosssections," Cross section vs Energy for  L "+str(L),"E (MeV)", " Cross Section (barns)")
+    if(L==2):
+        print(findpeakinfo(EnergiesDelta,crosssections))
 plt.show()
 
