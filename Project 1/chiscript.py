@@ -10,11 +10,10 @@ from scipy.interpolate import UnivariateSpline
 plt.rc('text', usetex=True)
 plt.rc('font', family='serif')
 def findpeakinfo(xs,arr):
-    spline = UnivariateSpline(xs, [a-np.max(arr)/2 for a in (arr)], s=0)
-    print(spline)
-    print(spline.roots())
-    r0, r1, r2 = spline.roots() # fi    nd the roots
-    return np.max(arr), np.abs(r1-r2)
+    func=np.asarray([a-np.max(arr)/2 for a in (arr)])
+    r0 =  func==0  
+    print(r0)
+    #return np.max(arr), np.abs(r1-r2)
 
 def makeanglecontinuous(angles):
     "Renormalize Angles to remove discontinuities by adding n*pi"
