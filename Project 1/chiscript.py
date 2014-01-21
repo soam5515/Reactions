@@ -10,8 +10,10 @@ from scipy.interpolate import UnivariateSpline
 plt.rc('text', usetex=True)
 plt.rc('font', family='serif')
 def findpeakinfo(xs,arr):
-    spline = UnivariateSpline(xs, arr-np.max(arr)/2, s=0)
-    r1, r2 = spline.roots() # find the roots
+    spline = UnivariateSpline(xs, [a-np.max(arr)/2 for a in (arr)], s=0)
+    print(spline)
+    print(spline.roots())
+    r0, r1, r2 = spline.roots() # fi    nd the roots
     return np.max(arr), np.abs(r1-r2)
 
 def makeanglecontinuous(angles):
@@ -150,6 +152,6 @@ for L in Ls:
     twodplot(EnergiesDelta,makeanglecontinuous(deltasen),r" $\delta$ vs Energy for  L "+str(L),"E(MeV)", r"$\delta$")
     twodplot(EnergiesDelta,crosssections," Cross section vs Energy for  L "+str(L),"E (MeV)", " Cross Section (barns)")
     if(L==2):
-        print(findpeakinfo(EnergiesDelta,crosssections))
+        print(findpeakinfo(EnergiesDelta[250:],crosssections))
 plt.show()
 

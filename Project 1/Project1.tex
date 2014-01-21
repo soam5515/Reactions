@@ -115,10 +115,10 @@ We can represent this as:\\
 \boxed{\chi''(r)=\frac{2\mu}{\hbar^2}(\frac{V_0}{1+e^{\frac{r-R_{ws}}{a_{ws}}}}-E)\chi+\frac{L(L+1)}{r^2}\chi}
 \end{equation}
 \subsection{Scattering Boundary Conditions}
-Now, if we plug in numbers for all of the constants, and make some assumptions for E and L, we are able to solve this numerically, if in addition we provide some sort of boundary conditions. We know that in order to prevent the terms from blowing up, this means that we need $\chi_L(0)=0$, which is one such condition. We also need to have, for an elastic collision, the condition that at infinity we should expect the wavefunction to return to the form $e^{ikr}$. This can be written as at some chosen distance $a$ we set the values of the equation to be 0 everywhere except at $\theta=0$, where we would want $e^{ika+\delta}$, noting tangentially that k is determined by the mass and energy of the neutron. This is explicitly:\\
+Now, if we plug in numbers for all of the constants, and make some assumptions for E and L, we are able to solve this numerically, if in addition we provide some sort of boundary conditions. We know that in order to prevent the terms from blowing up, this means that we need $\chi_L(0)=0$, which is one such condition. We also need to have, for an elastic collision, the condition that at infinity we should expect the wavefunction to return to the form $e^{ikr+\delta}$. This can be written as at some chosen distance $a$, where we would want $e^{ika+\delta}$, noting tangentially that k is determined by the (reduced) mass and energy of the neutron. This is explicitly:\\
 
 \begin{equation}
-k=\frac{p}{h}=\sqrt{\frac{2mE}{\hbar^2}}
+k=\frac{p}{h}=\sqrt{\frac{2\mu E}{\hbar^2}}
 \end{equation}
 
 From this we see that for any L value, we would simply match that\\
