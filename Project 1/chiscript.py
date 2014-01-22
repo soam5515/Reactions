@@ -6,15 +6,28 @@ from scipy import special
 from itertools import product
 from scipy.optimize import fsolve, curve_fit
 from scipy.interpolate import UnivariateSpline
-
+from scipy import signal
 plt.rc('text', usetex=True)
 plt.rc('font', family='serif')
 def findpeakinfo(xs,arr):
-    func=np.asarray([a-np.max(arr)/2 for a in (arr)])
-    r0 =  np.abs(func)<=0.08  
-    print(r0)
-    #return np.max(arr), np.abs(r1-r2)
-
+    "Script to find peak location and FWHM"
+    a=signal.find_peaks_cwt(arr,np.linspace(1,2,10))
+    r=a[1]
+    max=arr[r]
+    values=[aa-max/2 for aa in arr]
+    min=[0,-100]
+    max=[len(values)-1,100]
+    for i in range(50,r):
+        if( abs(values[i])<abs(min[1])):
+            min[0]=i
+            min[1]=values[i]
+    for i in range(r,len(values)):
+        if( abs(values[i])<abs(max[1])):
+            max[0]=i
+            max[1]=values[i]
+    print(min)
+    print(max)
+    return min,max
 def makeanglecontinuous(angles):
     "Renormalize Angles to remove discontinuities by adding n*pi"
     count=0#how many times n pi we need to add/subtract
@@ -151,6 +164,6 @@ for L in Ls:
     twodplot(EnergiesDelta,makeanglecontinuous(deltasen),r" $\delta$ vs Energy for  L "+str(L),"E(MeV)", r"$\delta$")
     twodplot(EnergiesDelta,crosssections," Cross section vs Energy for  L "+str(L),"E (MeV)", " Cross Section (barns)")
     if(L==2):
-        print(findpeakinfo(EnergiesDelta[250:],crosssections))
+        print(findpeakinfo(EnergiesDelta,crosssections))
 plt.show()
 
