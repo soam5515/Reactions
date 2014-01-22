@@ -13,6 +13,7 @@ def findpeakinfo(xs,arr):
     "Script to find peak location and FWHM"
     a=signal.find_peaks_cwt(arr,np.linspace(1,2,10))
     r=a[1]
+    print(xs[r])#Energy of peak, where we know first peak is at approximately 0.
     max=arr[r]
     values=[aa-max/2 for aa in arr]
     min=[0,-100]
@@ -164,6 +165,7 @@ for L in Ls:
     twodplot(EnergiesDelta,makeanglecontinuous(deltasen),r" $\delta$ vs Energy for  L "+str(L),"E(MeV)", r"$\delta$")
     twodplot(EnergiesDelta,crosssections," Cross section vs Energy for  L "+str(L),"E (MeV)", " Cross Section (barns)")
     if(L==2):
-        print(findpeakinfo(EnergiesDelta,crosssections))
+        left,right=(findpeakinfo(EnergiesDelta,crosssections))
+        print(EnergiesDelta[right[0]]-EnergiesDelta[left][0])#Prints fwhm of peak
 plt.show()
 
