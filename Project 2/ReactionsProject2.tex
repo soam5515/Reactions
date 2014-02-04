@@ -1,0 +1,150 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{units}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{caption}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\usepackage{amsmath}
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\usepackage{subcaption}
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\usepackage{graphicx}
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Michigan State University} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge  Project 2 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Alex Dombos, Samuel Lipschutz, Charles Loelius} % Your name
+
+\date{\normalsize 2/5/14} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Target Selection}
+
+In this case, we consider the setup to be a target of stable $^{58}$Ni, in its ground state. We thereby find that we have quantum numbers in the entrance partition corresponding to(assuming neutron/proton scattering):\\
+\begin{center}
+\begin{table}[h!]
+\captionsetup{font=large}
+\caption{Table of Quantum Values}
+\centering
+\vspace{3 mm}
+\begin{tabular}{|c|c|}
+
+Quantum Number & Value \\
+Mass partition x & T=58,P=1\\
+Charge & 28 \\
+Spin & 0\\
+Parity & +
+
+
+\end{tabular}
+\end{table}
+\end{center}
+
+
+\section{Pointlike and Structured Coulomb Scattering}
+
+We would expect,in the absence of any nuclear forces, and for a point like nucleus, we would expect that the proton would have a pure Rutherford cross section.Upon taking into account the finite size of the target, we recognize that there is a perturbation in the distribution of charge, so that the electric potential will switch from a $\frac{1}{r}$ term to a linear term proportional to $r$. We expect that this should mean that at energies high enough to probe the structure of the proton-i.e. those that can overcome the coulomb potential to have a reasonably large wavefunction in the vicinity of the proton- there ought to be an increased cross section in the forward direction. \\
+
+We compare this below to four graphs of the coulomb potential, one pointlike and one with spatial extent, with energies of .1 MeV and 50 MeV.\\
+
+ \begin{figure}[hbt]
+        \centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{PointlikeEpoint1.png}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+\quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{PointlikeE50.png}
+        \end{subfigure}
+\\
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{Coulombpoint1.png}
+        \end{subfigure}
+\quad
+        \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{Coulomb50.png}
+        \end{subfigure}
+
+        \caption{Comparison of Pointlike (top) and Extended (bottom) Coulomb Cross Sections }
+\end{figure}
+
+We see that this is exactly what was anticipated, that the pointlike coulomb scattering is indentical to the Rutherford cross section, wheras the case where the target (Nickel 58) has a radial extent shows no structure for low energy projectiles but has the expected forward peaking for high energy. \\
+\section{Neutron-Nickel Analysis}
+
+We then consider the previous analysis using a similar potential model for the nuclear optical potential, but setting the charge of the projectile to 0, leaving all else the same. The results of this are plotted below.\\
+
+ \begin{figure}[hbt]
+        \centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{PointlikeEpoint1.png}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+\quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{PointlikeE50.png}
+        \end{subfigure}
+
+        \caption{Differential Cross Sections for Neutron Interactions}
+\end{figure}
+
+\end{document}
