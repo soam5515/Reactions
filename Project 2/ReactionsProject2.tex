@@ -98,7 +98,7 @@ Parity & +
 
 \section{Pointlike and Structured Coulomb Scattering}
 
-We would expect,in the absence of any nuclear forces, and for a point like nucleus, we would expect that the proton would have a pure Rutherford cross section.Upon taking into account the finite size of the target, we recognize that there is a perturbation in the distribution of charge, so that the electric potential will switch from a $\frac{1}{r}$ term to a linear term proportional to $r$. We expect that this should mean that at energies high enough to probe the structure of the proton-i.e. those that can overcome the coulomb potential to have a reasonably large wavefunction in the vicinity of the proton- there ought to be an increased cross section in the forward direction. \\
+We would expect, in the absence of any nuclear forces, and for a point like nucleus, we would expect that the proton would have a pure Rutherford cross section.Upon taking into account the finite size of the target, we recognize that there is a perturbation in the distribution of charge, so that the electric potential will switch from a $\frac{1}{r}$ term to a linear term proportional to $r$. We expect that this should mean that at energies high enough to probe the structure of the proton-i.e. those that can overcome the coulomb potential to have a reasonably large wavefunction in the vicinity of the proton- there ought to be an increased cross section in the forward direction. \\
 
 We compare this below to four graphs of the coulomb potential, one pointlike and one with spatial extent, with energies of .1 MeV and 50 MeV.\\
 
@@ -128,23 +128,106 @@ We compare this below to four graphs of the coulomb potential, one pointlike and
 \end{figure}
 
 We see that this is exactly what was anticipated, that the pointlike coulomb scattering is indentical to the Rutherford cross section, wheras the case where the target (Nickel 58) has a radial extent shows no structure for low energy projectiles but has the expected forward peaking for high energy. \\
-\section{Neutron-Nickel Analysis}
+\newpage
 
-We then consider the previous analysis using a similar potential model for the nuclear optical potential, but setting the charge of the projectile to 0, leaving all else the same. The results of this are plotted below.\\
+\section{Proton-Nickel Analysis}
+\subsection{Differential Cross Sections}
+
+Here we examine the cross sections for the case of prton scattering on $^{58}$Ni with an optitcal potential paramaterized into volume, surface and spin orbit components.  Below in figure 3.1 we have the full potential (left) and only the real terms include (right).  In all cases we see the cross section (plotted vs the rutherford cross section) approach 1 at 0 degrees.  This is expected as the coulomb component diverges strongly at 0 degress and should dominate.  For the case of 5 MeV protons we see only small deviations away from the rutherford cross section, since at this energy the coulomb is shielding the details of the optical potential.   
+
 
  \begin{figure}[hbt]
         \centering
         \begin{subfigure}[b!]{0.45\textwidth}
-                \includegraphics[width=\textwidth]{PointlikeEpoint1.png}
+                \includegraphics[width=\textwidth]{FullUComp.PNG}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
           %(or a blank line to force the subfigure onto a new line)
 \quad
         \begin{subfigure}[b!]{0.45\textwidth}
-                \includegraphics[width=\textwidth]{PointlikeE50.png}
+                \includegraphics[width=\textwidth]{NoImuComparison.PNG}
+        \end{subfigure}
+
+        \caption{Differential Cross Sections for Proton Interactions}
+\end{figure}
+
+Below in figure 3.2 we have a comparision of the cross section with and without the imaginary part of the potential.  Seen in both the 5 MeV and 50 MeV cases the overall strength is reduced for the potential containing imaginary components.  This is expected as the loss of flux created by the imgainary potential should lower the probability of elastic scatterings.  
+
+ \begin{figure}[hbt]
+        \centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{5MeVUandNoUComp.PNG}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+\quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{50MeVnoUandUcomp.PNG}
+        \end{subfigure}
+
+        \caption{Differential Cross Sections for Proton Interactions}
+\end{figure}
+ 
+
+\subsection{S-Matrix Components}
+Below in figure 3.3 have the modulus of the S-Matrix vs total J.  As one expects the case where there is no imaginary component of the potential all the values are 1.  Without a loss of flux the S-Matrix must be unitary.  In the opposing case there is strong deviation from 1 for the lower partial waves.  
+\begin{figure}[hbt]
+        \centering
+	\includegraphics[width=\textwidth]{SMatrixV_J.PNG}
+ \caption{Modulos of the S-Matrix values as a function of J}	
+\end{figure}
+
+
+\subsection{Increased Radii and Diffusiveness}
+
+Below in figure 3.4 the coss sections for different radii and diffusiveness parameters are compared.  In both cases the values were increased by a factor of 1.5 in all the terms of the potential (volume surface and spin-orbit).  On the left is the increased radius case.  Here the 5 MeV protons move farther from the pure rutherford case as the extent of the nuclear interaction has been increased.  We see this also in the 50 MeV case where the overall trend tends to be amplified.  On right we have the increased diffusiveness case.  Here we again see more deviation from pure rutherford for the 5 MeV protons, but we also see a decrease a backward angles.  If we had decreaed the diffusiveness, making the potential more like a delta funcion, then we would expect there to be an increase in the backward angles.  As it become more diffusive there are more ways to scatter to foward angles.
+
+ \begin{figure}[hbt]
+        \centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{ChangedRadius.PNG}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+\quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{ChangedDiff.PNG}
+        \end{subfigure}
+
+        \caption{Comparison of increased Radii (left) and diffusiveness (right) to original potential values}
+\end{figure}
+
+
+
+
+\section{Neutron-Nickel Analysis}
+\subsection{Differential Cross Sections}
+We then consider the previous analysis using a similar potential model for the nuclear optical potential, but setting the charge of the projectile to 0, leaving all else the same. The results of this are plotted below.\\
+
+
+ \begin{figure}[hbt]
+        \centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{NeutronNi5.png}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+\quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{NeutronNi50.png}
         \end{subfigure}
 
         \caption{Differential Cross Sections for Neutron Interactions}
 \end{figure}
+
+We can see in this case that the distributions are sharply peaked near zero, with the major difference being in the extreme sharpness of the 50 MeV compared to a somewhat  broader peak for the 5 MeV. This makes sense because in the absence of a coulomb interaction, the only potential is the optical potential. Since the 50 MeV neutron has a larger energy compared to the optical potential and so is less affected. However, the 5 MeV neutron, no longer prevented from interacting with the optical potential due to the coulomb force, is likely to interact more with the optical potential. This explains the broader scattering. We might expect something similar as energy decreases and the optical potential causes further interactions. However, this must be reconciled with an expected decrease in flux caused by increase interactions with the imaginary potential.\\
+
+\subsection{Decreased Diffuseness}
+
+In this case, I have set the diffuseness paramaeter to be much smaller than previously, about 
+
+
+
+
 
 \end{document}
